@@ -1,0 +1,54 @@
+.card-spotlight {
+    position: absolute; /* ✅ Centering Trick */
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* ✅ Ensures perfect centering */
+
+    border-radius: 1.5rem;
+    border: 1px solid rgba(255, 255, 255, 0.4); /* ✅ Slightly stronger white border */
+
+    /* ✅ More White & Soft Translucent Effect */
+    background: rgba(255, 255, 255, 0.5); /* ✅ Increased whiteness */
+    backdrop-filter: blur(15px); /* ✅ More blur for a premium glass effect */
+
+    padding: 2rem;
+    overflow: hidden;
+    --mouse-x: 50%;
+    --mouse-y: 50%;
+    --spotlight-color: rgba(255, 165, 0, 0.1); /* ✅ Warm glow effect (Orange) */
+
+    /* ✅ Size */
+    width: 60vw;
+    height: 60vh;
+    max-width: 700px;
+    max-height: 500px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+
+    /* ✅ Enhanced Box Shadow for Depth */
+    box-shadow: 0px 15px 40px rgba(0, 0, 0, 0.15);
+}
+
+/* ✅ Warm Hover Effect */
+.card-spotlight::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: radial-gradient(circle at var(--mouse-x) var(--mouse-y), var(--spotlight-color), transparent 80%);
+    opacity: 0;
+    transition: opacity 0.5s ease;
+    pointer-events: none;
+}
+
+/* ✅ Improved Warm Glow on Hover */
+.card-spotlight:hover::before,
+.card-spotlight:focus-within::before {
+    opacity: 0.8;
+    --spotlight-color: rgba(255, 140, 0, 0.4); /* ✅ Stronger warm orange glow */
+}

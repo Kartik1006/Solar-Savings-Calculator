@@ -1,0 +1,75 @@
+.glow-on-hover {
+    width: 260px; /* ✅ Slightly wider */
+    height: 60px; /* ✅ More height */
+    border: none;
+    outline: none;
+    color: #222; /* ✅ Dark text for contrast */
+
+    /* ✅ Transparent Background with Blur Effect */
+    background: rgba(255, 255, 255, 0.1); /* ✅ Fully transparent */
+    backdrop-filter: blur(10px); /* ✅ Frosted glass effect */
+    box-shadow: 0 4px 15px rgba(255, 193, 7, 0.2); /* ✅ Subtle shadow */
+
+    cursor: pointer;
+    position: relative;
+    z-index: 0;
+    border-radius: 18px; /* ✅ More rounded */
+    font-size: 18px;
+    font-weight: bold;
+    padding: 18px 10px;
+    text-align: center;
+    transition: background 0.3s ease-in-out, transform 0.2s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+/* Glowing effect */
+.glow-on-hover:before {
+    content: '';
+    background: linear-gradient(45deg, rgba(255, 193, 7, 0.4), rgba(255, 152, 0, 0.4), rgba(255, 87, 34, 0.4));
+    position: absolute;
+    top: -4px;
+    left: -4px;
+    background-size: 200%;
+    z-index: -1;
+    filter: blur(10px);
+    width: calc(100% + 8px);
+    height: calc(100% + 8px);
+    animation: glowing 6s linear infinite;
+    opacity: 0;
+    transition: opacity 0.4s ease-in-out;
+    border-radius: 20px;
+}
+
+/* Hover effect */
+.glow-on-hover:hover:before {
+    opacity: 1;
+}
+
+/* Click effect */
+.glow-on-hover:active {
+    background: rgba(255, 255, 255, 0.2); /* ✅ Slightly more visible on click */
+    color: black;
+}
+
+/* Background layer */
+.glow-on-hover:after {
+    z-index: -1;
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+
+    /* ✅ Transparent & Blur Effect */
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(12px);
+
+    left: 0;
+    top: 0;
+    border-radius: 18px;
+}
+
+/* Refined glowing animation */
+@keyframes glowing {
+    0% { background-position: 0 0; }
+    50% { background-position: 200% 0; }
+    100% { background-position: 0 0; }
+}

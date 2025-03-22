@@ -1,0 +1,62 @@
+.savings {
+  position: absolute; /* ✅ Centering Trick */
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); /* ✅ Ensures perfect centering */
+
+  max-width: 600px;
+  width: 60vw; /* ✅ Responsive width */
+  padding: 2rem;
+
+  /* ✅ Soft Frosted Glass Effect */
+  background: rgba(255, 255, 255, 0.5); /* ✅ Soft white translucent */
+  backdrop-filter: blur(15px); /* ✅ Smooth blur effect */
+
+  border-radius: 1.5rem; /* ✅ Softer, rounded corners */
+  border: 1px solid rgba(255, 255, 255, 0.4); /* ✅ Subtle white border */
+
+  /* ✅ Enhanced Box Shadow */
+  box-shadow: 0px 15px 40px rgba(0, 0, 0, 0.15);
+
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+/* ✅ Input Fields */
+.savings input {
+  padding: 12px;
+  width: 80%;
+  margin: 10px 0;
+  border-radius: 10px; /* ✅ More rounded inputs */
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  background: rgba(255, 255, 255, 0.7); /* ✅ Slightly translucent input */
+  outline: none;
+  font-size: 1rem;
+}
+
+/* ✅ Button Styling */
+.savings button {
+  background: rgba(255, 193, 7, 0.7); /* ✅ Translucent golden yellow */
+  color: black;
+  padding: 14px 20px;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+  border-radius: 10px;
+  transition: background 0.3s ease-in-out, transform 0.2s ease-in-out;
+}
+
+/* ✅ Hover Effect */
+.savings button:hover {
+  background: rgba(255, 152, 0, 0.7); /* ✅ Warmer orange shade */
+  transform: scale(1.05);
+}
+
+/* ✅ Click Effect */
+.savings button:active {
+  background: rgba(255, 193, 7, 0.9); /* ✅ Deeper golden shade */
+  transform: scale(0.98);
+}

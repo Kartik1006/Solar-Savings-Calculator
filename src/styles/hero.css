@@ -1,0 +1,51 @@
+.hero {
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* ✅ Centers content vertically */
+  align-items: center;
+  text-align: center;
+  height: 90vh; /* ✅ Full screen height */
+  background: url("/assets/solar-bg.jpg") center/cover no-repeat;
+  color: rgb(34, 85, 34);
+  
+  padding: 0 20px;
+}
+
+/* 🔥 Large Title with Drop Shadow */
+/* Targeting SplitText Spans */
+.hero h1 span {
+  display: inline-block;
+  font-size: 5rem; /* Increase font size */
+  font-weight: bold;
+  color: black;
+  text-shadow: 4px 4px 12px rgba(0, 0, 0, 0.4);
+  opacity: 0.9;
+  transition: all 0.3s ease-in-out;
+}
+
+
+/* 🌟 Subtitle */
+.hero p {
+  font-size: 1rem;
+  margin-bottom: 30px;
+  opacity: 0.85;
+}
+
+/* ✨ Call-to-Action Button */
+.cta-btn {
+  background: #ffcc00;
+  color: black;
+  padding: 10px 20px;
+  font-size: 20px; /* Slightly bigger */
+  border: none;
+  cursor: pointer;
+  border-radius: 8px;
+  font-weight: bold;
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+/* 🟡 Button Hover Effect */
+.cta-btn:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 15px rgba(255, 204, 0, 0.8); /* Soft glow effect */
+}

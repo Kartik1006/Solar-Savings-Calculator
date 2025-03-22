@@ -1,0 +1,94 @@
+/* 🌞 Light Solar-Themed Background */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Poppins", sans-serif;
+  background: linear-gradient(135deg, #fff7d1, #f5d89c); /* Light Yellow to Soft Orange */
+  color: #333; /* Dark Gray Text for Better Readability */
+  height: 100vh;
+  overflow-x: hidden; /* ✅ Prevents horizontal scrolling */
+}
+
+body {
+  background: url("/src/assets/go-solar.jpg") no-repeat center center fixed;
+  background-size: cover;
+  position: relative;
+}
+
+/* ✅ Overlay for Reducing Opacity */
+body::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.4); /* Adjust opacity */
+  z-index: -1;
+}
+
+/* 🏗️ Main App Container */
+.app-container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* 📌 Content Wrapper (Keeps Footer at Bottom) */
+.content-wrapper {
+  flex: 1;
+  width: 95%;
+  max-width: 1200px;
+  padding: 30px;
+  text-align: center;
+  background: rgba(255, 255, 255, 0.8); /* Soft White with Transparency */
+  backdrop-filter: blur(10px); /* Glass Effect */
+  border-radius: 12px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  margin: 20px 0;
+}
+
+/* 🔗 Better Typography */
+h1 {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #444; /* Softer Black */
+  margin-bottom: 15px;
+}
+
+p {
+  font-size: 1.1rem;
+  opacity: 0.85;
+}
+
+/* 🎨 Buttons */
+button {
+  background: #ffcc00;
+  color: #333;
+  font-size: 1rem;
+  padding: 12px 18px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+button:hover {
+  background: #ffdd44;
+}
+
+/* ✅ Fix Extra Margin Issues Causing Horizontal Scroll */
+* {
+  box-sizing: border-box;
+  max-width: 100%;
+}
+
+/* 🌍 Prevent unwanted horizontal scrollbars */
+html, body {
+  width: 100%;
+  overflow-x: hidden;
+}
+

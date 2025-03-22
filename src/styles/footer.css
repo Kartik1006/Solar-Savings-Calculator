@@ -1,0 +1,28 @@
+.footer {
+  width: 100%;
+  text-align: center;
+  padding: 3px 0;
+  background: rgba(0, 0, 0, 0.8); /* Dark footer */
+  color: white;
+  font-size: 1rem;
+  font-weight: 500;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+
+html, body {
+  height: 100%; /* Ensures full height */
+  margin: 0; /* Removes default margin */
+  padding: 0;
+}
+
+#root {
+  min-height: 100vh; /* Ensures the main container fills the viewport */
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  flex: 1; /* Pushes footer to the bottom */
+}
