@@ -1,7 +1,7 @@
-# 🌞 Solar Panel Calculator
+# 🌞 Solar Savings Calculator
 
 ## 📌 Project Overview
-The **Solar Panel Calculator** is a web application designed to help users estimate solar panel requirements, cost savings, and return on investment (ROI) based on their location, roof size, and energy consumption.
+The **Solar Savings Calculator** is a web application designed to help users estimate solar panel requirements, cost savings, and return on investment (ROI) based on their location, roof size, and energy consumption.
 
 The app integrates **geolocation services** and **solar irradiance data** to provide precise calculations and recommendations.
 
