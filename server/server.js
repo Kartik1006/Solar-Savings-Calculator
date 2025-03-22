@@ -10,7 +10,7 @@ app.use(cors());
 
 const SOLCAST_API_KEY = "8Zrh05IExXu4ReqV8tCltfbTxDBo3li8"; // Replace with actual API key
 
-// 🌞 Fetch Solar Irradiance from Solcast API
+//Fetch Solar Irradiance from Solcast API
 async function fetchSolarIrradiance(latitude, longitude) {
     try {
         const endDate = new Date().toISOString().split("T")[0];  // Today's date (YYYY-MM-DD)
@@ -20,7 +20,7 @@ async function fetchSolarIrradiance(latitude, longitude) {
 
         const apiUrl = `https://api.solcast.com.au/radiation/estimated_actuals?latitude=${latitude}&longitude=${longitude}&start=${formattedStartDate}&end=${endDate}&format=json&api_key=${SOLCAST_API_KEY}`;
         
-        console.log(`🔗 Fetching data from: ${apiUrl}`);
+        console.log(`Fetching data from: ${apiUrl}`);
         const response = await fetch(apiUrl);
         
         if (!response.ok) {
@@ -29,7 +29,7 @@ async function fetchSolarIrradiance(latitude, longitude) {
         }
 
         const data = await response.json();
-        console.log("📡 Raw API Response:", JSON.stringify(data, null, 2));
+        console.log("Raw API Response:", JSON.stringify(data, null, 2));
 
         const dniValues = data?.estimated_actuals?.map(entry => entry.dni) || [];
         if (dniValues.length === 0) {
@@ -37,20 +37,20 @@ async function fetchSolarIrradiance(latitude, longitude) {
             return null; // Return null if no data
         }
 
-        console.log(`🔍 Total DNI Readings Received: ${dniValues.length}`);
+        console.log(`Total DNI Readings Received: ${dniValues.length}`);
 
         // Convert DNI to kWh/m²/year
         const totalIrradiance = dniValues.reduce((sum, dni) => sum + (dni * 0.5 / 1000), 0);
 
-        console.log(`☀️ Total Annual Solar Irradiance (kWh/m²/year): ${totalIrradiance.toFixed(2)}`);
+        console.log(`Total Annual Solar Irradiance (kWh/m²/year): ${totalIrradiance.toFixed(2)}`);
         return totalIrradiance.toFixed(2);
     } catch (error) {
-        console.error("❌ Error fetching solar irradiance:", error);
+        console.error("Error fetching solar irradiance:", error);
         return null; // Return null in case of an error
     }
 }
 
-// 🌞 API Endpoint to Fetch Solar Irradiance
+// API Endpoint to Fetch Solar Irradiance
 app.post("/solar_irradiance", async (req, res) => {
     const { latitude, longitude } = req.body;
     if (!latitude || !longitude) {
@@ -65,7 +65,7 @@ app.post("/solar_irradiance", async (req, res) => {
     }
 });
 
-// ✅ `/calculate_solar` uses the fetched irradiance if available
+// `/calculate_solar` uses the fetched irradiance if available
 app.post('/calculate_solar', async (req, res) => {
     const { location, area: userAreaInput, panel_quality: userPanelQualityInput, electricityBillAmount, latitude, longitude } = req.body;
 
@@ -77,14 +77,14 @@ app.post('/calculate_solar', async (req, res) => {
     let parsedSolarIrradiance = 1600; // Default value
 
     if (latitude && longitude) {
-        console.log("📍 Fetching solar irradiance for given location...");
+        console.log("Fetching solar irradiance for given location...");
         const fetchedIrradiance = await fetchSolarIrradiance(latitude, longitude);
         if (fetchedIrradiance !== null) {
             parsedSolarIrradiance = parseFloat(fetchedIrradiance);
         }
     }
 
-    console.log(`☀️ Using Solar Irradiance: ${parsedSolarIrradiance} kWh/m²/year`);
+    console.log(`Using Solar Irradiance: ${parsedSolarIrradiance} kWh/m²/year`);
 
     try {
         const parsedElectricityBillAmount = parseFloat(electricityBillAmount);
