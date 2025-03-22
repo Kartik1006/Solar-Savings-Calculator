@@ -153,7 +153,7 @@ Body: { location, area, electricityBillAmount, latitude, longitude }
 
 ---
 ## 📜 License
-This project is **open-source** and free to use under the **MIT License**.
+This project is **open-source**.
 
 ---
 ## 🤝 Contributing
