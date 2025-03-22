@@ -163,10 +163,3 @@ This project is **open-source**.
 4. Push changes: `git push origin feature-name`
 5. Submit a Pull Request 📌
 
----
-## 📩 Contact
-If you have any questions or suggestions, feel free to reach out!
-
-📧 Email: your.email@example.com  
-📌 GitHub: [yourusername](https://github.com/yourusername)  
-
