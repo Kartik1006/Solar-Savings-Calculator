@@ -11,5 +11,10 @@ export default defineConfig({
         secure: false
       }
     }
-  }
+  },
+  build: {
+    rollupOptions: {
+      external: ['react-router-dom'],
+    },
+  },
 });
